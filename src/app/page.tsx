@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Container from "@/components/shared/containter";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="  bg-sky-500">
-      Hello
-    </main>
+    <Navbar/>
   );
 }
