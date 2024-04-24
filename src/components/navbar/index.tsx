@@ -42,7 +42,7 @@ function Navbar() {
             <ul className="hidden sm:flex gap-x-6">
               {navList.map((item) => (
                 <li
-                  className={`relative text-neutral-800 hover:text-neutral-900 cursor-pointer hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-[5px] hover:after:bg-primary-orange hover:after:left-0 hover:after:-bottom-12`}
+                  className={`relative text-neutral-800 hover:text-neutral-900 cursor-pointer hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-[5px] hover:after:bg-primary-orange hover:after:left-0 hover:after:bottom-[-37px]`}
                   key={item.name}
                 >
                   {item.name}
@@ -120,7 +120,7 @@ function MobileMenu() {
 }
 
 function CartToolTip() {
-  const [showToolTip, setShowToolTip] = React.useState(false);
+  const [showToolTip, setShowToolTip] = React.useState(true);
 
   const handleCartIconClick = () => {
     setShowToolTip(!showToolTip);
@@ -145,7 +145,7 @@ function CartToolTip() {
         <img src="/images/icon-cart.svg" alt="" />
       </span>
       {showToolTip && (
-        <div className="w-[360px] h-[256px] absolute top-[68px] -left-[246px] bg-white border border-gray-300 rounded shadow">
+        <div className="w-[360px] h-[256px] absolute top-[68px] sm:top-[45px]  left-[-246px] sm:left-[-160px] bg-white border border-gray-300 rounded shadow">
           <div className="font-bold p-4 border-b-[1px]">Cart</div>
           <div className="flex flex-col gap-8  h-[197px] p-6 rounded-sm">
             <CartItem />
