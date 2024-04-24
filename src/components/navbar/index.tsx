@@ -88,7 +88,7 @@ function MobileMenu() {
   console.log(showSidebar);
   return (
     <>
-      <div>
+      
         <span onClick={toggleSideMenu}>
           <img src="/images/icon-menu.svg" alt="" />
         </span>
@@ -108,7 +108,7 @@ function MobileMenu() {
             ))}
           </ul>
         )}
-      </div>
+      
       {showSidebar && (
         <div
           id="outside-mobile-menu"
