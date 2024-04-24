@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <nav>
       <Container>
-        <div className="flex items-center justify-between p-6 border border-b-1">
+        <div className="flex items-center justify-between p-6 border-b-[1px]">
           {/* left side of Nav */}
           <div className="flex items-center gap-4">
             <MobileMenu />
@@ -87,7 +87,7 @@ function MobileMenu() {
 
   
   return (
-    <>
+    <div className="sm:hidden">
       
         <span onClick={toggleSideMenu}>
           <img src="/images/icon-menu.svg" alt="" />
@@ -115,12 +115,12 @@ function MobileMenu() {
           className="fixed top-0 right-0 w-[35%] flex h-screen flex-col gap-6 bg-black bg-opacity-50 p-6 z-10"
         ></div>
       )}
-    </>
+    </div>
   );
 }
 
 function CartToolTip() {
-  const [showToolTip, setShowToolTip] = React.useState(true);
+  const [showToolTip, setShowToolTip] = React.useState(false);
 
   const handleCartIconClick = () => {
     setShowToolTip(!showToolTip);
