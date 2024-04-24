@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <nav>
       <Container>
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between p-6 border border-b-1">
           {/* left side of Nav */}
           <div className="flex items-center gap-4">
             <MobileMenu />
@@ -67,7 +67,7 @@ function Navbar() {
 export default Navbar;
 
 function MobileMenu() {
-  const [showSidebar, setShowSidebar] = React.useState(true);
+  const [showSidebar, setShowSidebar] = React.useState(false);
 
   function toggleSideMenu() {
     setShowSidebar(!showSidebar);
@@ -85,7 +85,7 @@ function MobileMenu() {
     };
   }, []);
 
-  console.log(showSidebar);
+  
   return (
     <>
       
@@ -120,7 +120,7 @@ function MobileMenu() {
 }
 
 function CartToolTip() {
-  const [showToolTip, setShowToolTip] = React.useState(false);
+  const [showToolTip, setShowToolTip] = React.useState(true);
 
   const handleCartIconClick = () => {
     setShowToolTip(!showToolTip);
@@ -145,8 +145,8 @@ function CartToolTip() {
         <img src="/images/icon-cart.svg" alt="" />
       </span>
       {showToolTip && (
-        <div className=" w-[360px] h-[256px] absolute top-[50px] -right-[180px] bg-white border border-gray-300 rounded shadow">
-          <p className="font-bold p-4 border-b-[1px]">Cart</p>
+        <div className="w-[360px] h-[256px] absolute top-[68px] -left-[246px] bg-white border border-gray-300 rounded shadow">
+          <div className="font-bold p-4 border-b-[1px]">Cart</div>
           <div className="flex flex-col gap-8  h-[197px] p-6 rounded-sm">
             <CartItem />
             <CartButton />
@@ -166,13 +166,13 @@ function CartItem() {
         src="/images/image-product-1-thumbnail.jpg"
         alt="image-product-1-thumbnail"
       />
-      <p className="text-neutral-800">
+      <div className="text-neutral-800">
         <div>Fall Limited Edition Sneakers</div>
         <div>
           <span>$125.00</span> <span>x 3</span>{" "}
           <span className="font-bold text-neutral-900">$375.00</span>
         </div>
-      </p>
+      </div>
     </div>
   );
 }
