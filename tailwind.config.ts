@@ -21,6 +21,13 @@ const config: Config = {
         'neutral-700': "hsl(220, 14%, 75%)",
         'neutral-600': "blue: hsl(223, 64%, 98%)"
       },
+      screens: {
+        'mobile': '576px',
+      },
+      flexBasis: {
+        '9/10': '90%',
+
+      }
     },
     
   },
