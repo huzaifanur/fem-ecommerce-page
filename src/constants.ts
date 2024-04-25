@@ -17,7 +17,8 @@ export const productImages = [
 
 export const productThumbnails = [
   {
-    path:"/images/image-product-1-thumbnail.jpg"
+    path:"/images/image-product-1-thumbnail.jpg",
+    selected: true
   },
   {
     path: "/images/image-product-2-thumbnail.jpg",
