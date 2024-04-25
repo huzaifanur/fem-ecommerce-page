@@ -30,7 +30,7 @@ function MobileMenu() {
           </span>
           {/* Z-INDEX-1 */}
           {showSidebar && (
-            <ul className="fixed top-0 left-0 w-[65%] flex h-screen flex-col gap-6 bg-white p-6 z-10">
+            <ul className="fixed top-0 left-0 w-[65%] flex h-screen flex-col gap-6 bg-white p-6 ">
               <span onClick={toggleSideMenu} className="py-6">
                 <img src="/images/icon-close.svg" alt="" />
               </span>
