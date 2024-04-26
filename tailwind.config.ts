@@ -24,10 +24,7 @@ const config: Config = {
       screens: {
         'mobile': '576px',
       },
-      flexBasis: {
-        '9/10': '90%',
-
-      }
+      
     },
     
   },

@@ -1,6 +1,7 @@
 import Container from "../shared/containter";
 import ProductImageComponent from "./product-image";
 import ProductContent from "./product-content";
+import ImageView from "./product-image/backup";
 
 function ProductPage() {
   return (
@@ -14,6 +15,7 @@ function ProductPage() {
           <ProductContent />
         </div>
       </div>
+      <ImageView/>
     </Container>
   );
 }
