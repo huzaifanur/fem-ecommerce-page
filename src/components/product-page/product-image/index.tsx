@@ -1,34 +1,79 @@
-import React from "react";
-import { productThumbnails } from "@/constants";
+"use client";
+import React, { useState } from "react";
+import { images } from "@/constants";
 import { SelectedImageThumbnail, ImageThumbnail } from "./image-thumbnail";
 import { NextImageButton, PreviousImageButton } from "./slider-buttons";
+import ImageView from "./backup";
 
 function ProductImageComponent() {
+  const [selectedImage, setSelectedImage] = React.useState(0);
+  const [showViewComponent, setShowViewComponent] = useState(false);
+  function hanldeSelectImage(index: number) {
+    
+    setSelectedImage(index);
+  }
+
+  function handleNextImage() {
+    // should not be more than images length
+    if (selectedImage >= images.length - 1) {
+      setSelectedImage(0);
+    }
+    else{
+    setSelectedImage(selectedImage + 1);}
+  }
+  function handlePreviousImage() {
+    if (selectedImage <= 0) {
+      setSelectedImage(images.length - 1);
+    }
+    else{
+    setSelectedImage(selectedImage - 1);}
+  }
+
   return (
     <div>
       {/* Image */}
-      <div className="relative mx-auto sm:w-[445px] sm:rounded-lg">
+      <div className="relative mx-auto w-[445px]">
         <div className="sm:hidden">
-          <NextImageButton />
+          <NextImageButton handleNextImage={handleNextImage}  />
         </div>
         <div className="sm:hidden">
-          <PreviousImageButton />
+          <PreviousImageButton handlePreviousImage={handlePreviousImage} />
         </div>
         <img
-          className="h-[300px] w-[375px] object-cover sm:h-[445px] sm:w-[445px] sm:rounded-lg mx-auto"
-          src="/images/image-product-1.jpg"
+        onClick={()=>{setShowViewComponent(true)}}
+          className="object-cover h-[445px] w-[445px]  cursor-pointer mx-auto"
+          src={images[selectedImage].imagePath}
+
         />
       </div>
       {/* Thumbnails */}
       <div className="hidden sm:flex justify-center gap-[30px] w-full pt-8">
-        {productThumbnails.map((item) => {
-          return item.selected ? (
-            <SelectedImageThumbnail key={item.path} path={item.path} />
+        {images.map((image, index) => {
+          return index == selectedImage ? (
+            <SelectedImageThumbnail
+              key={index}
+              image={image}
+              hanldeSelectImage={hanldeSelectImage}
+            />
           ) : (
-            <ImageThumbnail key={item.path} path={item.path} />
+            <ImageThumbnail
+              key={index}
+              image={image}
+              hanldeSelectImage={hanldeSelectImage}
+            />
           );
         })}
       </div>
+      {/* Image View  */}
+      {showViewComponent && (
+        <ImageView
+          images={images}
+          selectedImage={selectedImage}
+          handleNextImage={handleNextImage}
+          handlePreviousImage={handlePreviousImage}
+          hanldeSelectImage={hanldeSelectImage}
+        />
+      )}
     </div>
   );
 }
