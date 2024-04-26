@@ -32,7 +32,7 @@ function ProductImageComponent() {
   return (
     <div>
       {/* Image */}
-      <div className="relative mx-auto w-[445px]">
+      <div className="relative mx-auto w-[375px]  sm:w-[445px]">
         <div className="sm:hidden">
           <NextImageButton handleNextImage={handleNextImage}  />
         </div>
