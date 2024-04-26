@@ -41,7 +41,7 @@ function ProductImageComponent() {
         </div>
         <img
         onClick={()=>{setShowViewComponent(true)}}
-          className="object-cover h-[445px] w-[375px]  sm:w-[445px]]  cursor-pointer mx-auto"
+          className="object-cover h-[445px] w-[375px]  sm:w-[445px] cursor-pointer mx-auto"
           src={images[selectedImage].imagePath}
 
         />
