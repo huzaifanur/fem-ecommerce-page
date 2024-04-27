@@ -2,7 +2,7 @@ import Button from "@/components/shared/button";
 function CartButton() {
     return (
       <Button>
-        <p>Checkout</p>
+        <p className="text-white">Checkout</p>
       </Button>
     );
   }
