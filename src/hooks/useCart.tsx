@@ -17,25 +17,12 @@ interface Cart {
   cartItems: CartItem[];
 }
 
-const initialState: Cart = {
-  cartItems: [
-    {
-      product: {
-        title: "Example Product",
-        description: "This is an example product description.",
-        price: 10.99,
-      },
-      count: 2,
-    },
-  ],
-};
-
 const CartContext = createContext<{
   cart: Cart;
   addToCart: (product: Product, count: number) => void;
   removeFromCart: (productTitle: string) => void;
 }>({
-  cart: initialState,
+  cart: { cartItems: [] },
   addToCart: () => {},
   removeFromCart: () => {},
 });

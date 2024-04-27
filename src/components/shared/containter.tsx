@@ -7,10 +7,12 @@ interface ContainerProps {
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
   return (
-    <div className='mx-auto max-w-[375px] sm:max-w-[1110px] overflow-hidden'>
+    <div className='mx-auto  max-w-[1110px]'>
       {children}
     </div>
   );
 };
 
 export default Container;
+
+
